@@ -1,0 +1,78 @@
+-- Crear base de datos
+CREATE DATABASE IF NOT EXISTS futbolpro_db;
+USE futbolpro_db;
+
+-- Tabla Fan
+CREATE TABLE fan (
+    Id_Fan INT AUTO_INCREMENT PRIMARY KEY,
+    TDocumento_Fan VARCHAR(50),
+    NDocumento_Fan VARCHAR(50),
+    Nombres_Fan VARCHAR(100),
+    Apellidos_Fan VARCHAR(100),
+    Email_Fan VARCHAR(255) UNIQUE,
+    Password_Fan VARCHAR(255),
+    EquipoFv_Fan VARCHAR(100),
+    LigaFv_Fan VARCHAR(100),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla Proveedor
+CREATE TABLE proveedor (
+    Id_Proveedor INT AUTO_INCREMENT PRIMARY KEY,
+    TDocumento_Proveedor VARCHAR(50),
+    NDocumento_Proveedor VARCHAR(50),
+    Nombres_Proveedor VARCHAR(100),
+    Apellidos_Proveedor VARCHAR(100),
+    Email_Proveedor VARCHAR(255) UNIQUE,
+    Password_Proveedor VARCHAR(255),
+    MedioTransporte_Proveedor VARCHAR(100),
+    Experiencia_Proveedor VARCHAR(100),
+    Especialidad_Proveedor VARCHAR(255),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla Productos (relacionada con proveedor)
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(200),
+    categoria VARCHAR(100),
+    precio DECIMAL(10,2),
+    descripcion TEXT,
+    imagen VARCHAR(500),
+    stock INT,
+    proveedor_id INT,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    activo TINYINT(1) DEFAULT 1,
+    FOREIGN KEY (proveedor_id) REFERENCES proveedor(Id_Proveedor)
+);
+
+-- Tabla Analista
+CREATE TABLE analista (
+    Id_Analista INT AUTO_INCREMENT PRIMARY KEY,
+    TDocumento_Analista VARCHAR(50),
+    NDocumento_Analista VARCHAR(50),
+    Nombres_Analista VARCHAR(100),
+    Apellidos_Analista VARCHAR(100),
+    Email_Analista VARCHAR(255) UNIQUE,
+    Password_Analista VARCHAR(255),
+    TipoAnalisis_Analista VARCHAR(100),
+    Herramientas_Analista VARCHAR(100),
+    Certificado_Analista VARCHAR(255),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla Estadísticas (relacionada con analista)
+CREATE TABLE estadisticas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    liga VARCHAR(100),
+    equipo VARCHAR(150),
+    tipo_estadistica VARCHAR(100),
+    valor VARCHAR(100),
+    temporada VARCHAR(50),
+    observaciones TEXT,
+    analista_id INT,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (analista_id) REFERENCES analista(Id_Analista)
+);
