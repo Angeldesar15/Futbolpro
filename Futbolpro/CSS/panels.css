@@ -1,0 +1,793 @@
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  color: white;
+}
+
+.dashboard-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+}
+
+.dashboard-header p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.dashboard-header .btn {
+  margin-top: 20px;
+}
+
+.highlight {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* ========== ESTADÍSTICAS DEL DASHBOARD ========== */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-box {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.stat-box h3 {
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+  color: #667eea;
+}
+
+.stat-box p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.team-name {
+  color: #764ba2;
+}
+
+/* ========== GRID DE CONTENIDO ========== */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.content-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.content-card h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.5em;
+  color: #333;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+/* ========== FORMULARIOS ========== */
+
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form-header h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.btn-back {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.3s;
+}
+
+.btn-back:hover {
+  background: #d32f2f;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ========== LISTAS ========== */
+
+.match-list,
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.match-item,
+.news-item {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.match-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.match-date {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.9em;
+}
+
+.match-teams {
+  font-weight: 500;
+  color: #333;
+}
+
+.news-item h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.news-item p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* ========== ESTADÍSTICAS DEL EQUIPO ========== */
+
+.team-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.stat-row span {
+  color: #666;
+}
+
+.stat-row strong {
+  color: #667eea;
+  font-size: 1.1em;
+}
+
+/* ========== PRODUCTOS ========== */
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.producto-item {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.producto-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.producto-item h4 {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.producto-item .precio {
+  color: #667eea;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.producto-item .stock {
+  color: #666;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.producto-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.producto-actions button {
+  flex: 1;
+  padding: 8px;
+  font-size: 0.9em;
+}
+
+/* ========== ESTADÍSTICAS ========== */
+
+.estadisticas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.estadistica-item {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: box-shadow 0.3s;
+}
+
+.estadistica-item:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.est-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.est-liga {
+  background: #667eea;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.est-fecha {
+  color: #999;
+  font-size: 0.9em;
+}
+
+.estadistica-item h4 {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.est-valor {
+  color: #667eea;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.est-temporada {
+  color: #666;
+  font-size: 0.95em;
+  margin: 10px 0;
+}
+
+.est-obs {
+  color: #666;
+  font-style: italic;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ========== MODO OSCURO ========== */
+
+body.dark-mode .dashboard-container {
+  color: #e0e0e0;
+}
+
+body.dark-mode .dashboard-header {
+  background: linear-gradient(135deg, #1a237e 0%, #4a148c 100%);
+}
+
+body.dark-mode .stat-box,
+body.dark-mode .content-card,
+body.dark-mode .form-container,
+body.dark-mode .producto-item,
+body.dark-mode .estadistica-item {
+  background: #2c2c2c;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode .match-item,
+body.dark-mode .news-item,
+body.dark-mode .stat-row {
+  background: #1a1a1a;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-container {
+    padding: 20px;
+  }
+}
+/* FORZAR ESTILOS DE INPUTS - SOLUCIÓN DEFINITIVA */
+input[type="text"],
+input[type="email"], 
+input[type="password"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #e0e0e0 !important;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+  color: #999999 !important;
+  opacity: 1 !important;
+}
+
+/* Labels siempre oscuros en modo claro */
+label {
+  color: #333333 !important;
+}
+
+/* MODO OSCURO - Sobrescribir TODO */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"], 
+body.dark-mode input[type="password"],
+body.dark-mode input[type="number"],
+body.dark-mode input[type="url"],
+body.dark-mode select,
+body.dark-mode textarea {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 2px solid #444444 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #888888 !important;
+  opacity: 1 !important;
+}
+
+body.dark-mode label {
+  color: #ffffff !important;
+}
+
+body.dark-mode select option {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+}
+/* Contenedor principal del dashboard */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header del panel - más compacto */
+.dashboard-header {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.dashboard-header h2 {
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.dashboard-header p {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+/* Grid de estadísticas - más espacioso */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.stat-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.stat-box h3 {
+  font-size: 36px;
+  margin-bottom: 8px;
+  color: #2c5aa0;
+  font-weight: bold;
+}
+
+.stat-box p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Content grid - tarjetas más espaciadas */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.content-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+.content-card h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+  color: #333;
+}
+
+/* Lista de productos del proveedor */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.producto-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.producto-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+}
+
+.producto-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.producto-item h4 {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.producto-item .precio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c5aa0;
+  margin: 8px 0;
+}
+
+.producto-item .stock {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.producto-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.producto-actions button {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+/* Lista de estadísticas del analista */
+.estadisticas-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.estadistica-item {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #2c5aa0;
+  transition: all 0.3s ease;
+}
+
+.estadistica-item:hover {
+  background: #e9ecef;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.est-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.est-liga {
+  background: #2c5aa0;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.est-fecha {
+  color: #666;
+}
+
+.estadistica-item h4 {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.est-valor {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c5aa0;
+  margin: 8px 0;
+}
+
+.est-temporada {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.est-obs {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+/* Formularios - más compactos */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.form-header h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.btn-back {
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #d0d0d0;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+  
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-box h3 {
+    font-size: 28px;
+  }
+}
+
+/* Ajustes para pantallas muy grandes */
+@media (min-width: 1600px) {
+  .dashboard-container {
+    max-width: 1600px;
+  }
+  
+  .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* Espaciado adicional para el contenido principal */
+.main-content {
+  padding: 40px 20px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Animaciones suaves */
+.content-card,
+.stat-box,
+.producto-item,
+.estadistica-item {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
